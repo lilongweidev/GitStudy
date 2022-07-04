@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     private val requestCamera =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
-            if (it) "权限授予" else "未授予".showToast(this)
+            Toast.makeText(this, if (it) "权限授予" else "未授予", Toast.LENGTH_SHORT).show()
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
